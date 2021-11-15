@@ -1,1 +1,1 @@
-# JavaScript-Capstone
+# webpack-setup
