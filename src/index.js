@@ -1,21 +1,8 @@
-import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-  return element;
-}
-
-document.body.appendChild(component());
+const fetchApi = () => {
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Lusaka&appid=623e557fbf15d070be5435e1d2494617')
+    .then((response) => response.json())
+    .then((result) => console.log(result));
+};
+fetchApi();
