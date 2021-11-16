@@ -1,6 +1,7 @@
 import './style.css';
 import Icon from './thunder.svg';
 import Icon2 from './like.svg';
+
 const fetchApi = async () => {
   await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,30,14,39,10&units=metric&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())

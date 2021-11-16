@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
 body {
   font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 header {
   border: 1px solid black;
   height: 90px;
   display: flex;
   align-items: center;
 }
+
 button {
   border: none;
   color: #fff;
@@ -18,9 +21,11 @@ button {
   border-radius: 15px;
   padding: 0.5rem 0.7rem;
 }
+
 .d-flex {
   display: flex;
 }
+
 .navigation {
   margin: 0 auto;
   width: 60%;
@@ -28,22 +33,27 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
 .navigation img {
   height: 60px;
 }
+
 ul > * {
   list-style: none;
   margin-left: 35px;
 }
+
 ul > li > a {
   margin: 1rem 0;
   text-decoration: none;
   color: black;
 }
+
 ul > li:nth-child(1) a {
   text-decoration: underline;
   font-weight: 700;
 }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -53,15 +63,18 @@ footer {
   background: #fff;
   border-top: 1px solid black;
 }
+
 footer p {
   text-align: center;
 }
+
 .main-container {
   margin: 20px auto 60px auto;
   flex-wrap: wrap;
   width: 60%;
   gap: 30px;
 }
+
 .temp {
   color: #0194a2;
   font-size: 60px;
@@ -69,6 +82,7 @@ footer p {
   margin: 0;
   padding-block: 60px 10px;
 }
+
 .card {
   position: relative;
   flex-direction: column;
@@ -79,11 +93,13 @@ footer p {
   border-radius: 15px;
   border: 1px solid rgba(13, 211, 130, 255);
 }
+
 .card .forecast {
   position: absolute;
   top: 0;
   right: 0;
 }
+
 .txt {
   align-items: center;
 }
