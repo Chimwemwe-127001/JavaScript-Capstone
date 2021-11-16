@@ -6,3 +6,42 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  border: 1px solid black;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.navigation {
+  margin: 0 auto;
+  width: 50%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation img {
+  height: 60px;
+}
+
+ul > * {
+  list-style: none;
+  margin-left: 35px;
+}
+
+ul > li > a {
+  margin: 1rem 0;
+  text-decoration: none;
+  color: black;
+}
+
+ul > li:nth-child(1) a {
+  text-decoration: underline;
+  font-weight: 700;
+}

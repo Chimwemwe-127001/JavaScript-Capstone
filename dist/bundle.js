@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nheader {\r\n  border: 1px solid black;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\n.navigation {\r\n  margin: 0 auto;\r\n  width: 50%;\r\n  flex-direction: row-reverse;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.navigation img {\r\n  height: 60px;\r\n}\r\n\r\nul > * {\r\n  list-style: none;\r\n  margin-left: 25px;\r\n}\r\n\r\nul > li > p {\r\n  margin: 1rem 0;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -473,6 +473,12 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
+/***/ }),
+/* 11 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "1a27195ad504a77c275a.svg";
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -541,13 +547,32 @@ module.exports = function (cssWithMappingToString) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _thunder_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 
+
+
+const fetchApi = () => {
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Lusaka&appid=623e557fbf15d070be5435e1d2494617')
+    .then((response) => response.json())
+    .then((result) => console.log(result));
+};
+fetchApi();
+
+const navigation = document.querySelector('.navigation');
+const img = document.createElement('img');
+img.setAttribute('src', _thunder_svg__WEBPACK_IMPORTED_MODULE_1__);
+navigation.appendChild(img);
 })();
 
 /******/ })()
