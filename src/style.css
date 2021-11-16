@@ -45,3 +45,16 @@ ul > li:nth-child(1) a {
   text-decoration: underline;
   font-weight: 700;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  border-top: 1px solid black;
+}
+
+footer p {
+  text-align: center;
+}
