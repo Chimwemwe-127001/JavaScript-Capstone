@@ -2,8 +2,14 @@ import './style.css';
 import Icon from './thunder.svg';
 import Icon2 from './like.svg';
 
-const fetchApi = async () => {
-  await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,30,14,39,10&units=metric&appid=623e557fbf15d070be5435e1d2494617')
+const popup = document.querySelector('.popup');
+const navigation = document.querySelector('.navigation');
+const img = document.createElement('img');
+img.setAttribute('src', Icon);
+navigation.appendChild(img);
+
+const populateUI = async () => {
+  await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,30&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())
     .then((result) => {
       result.list.forEach((city) => {
@@ -16,15 +22,41 @@ const fetchApi = async () => {
               <p>${city.name}</p>
               <span class="txt d-flex"><img class="like" src="${Icon2}"><p>5 likes</p></span>
             </div>
-          <button type="button">Comments</button>
+          <button id="${city.id}" class="popupbtn" type="button">Comments</button>
           </div>
         `;
         mainContainer.innerHTML += cardTemp;
       });
+
+      const popupComments = async (id) => {
+        await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=623e557fbf15d070be5435e1d2494617`)
+          .then((response) => response.json())
+          .then((data) => {
+            const popupContainer = document.querySelector('.popup');
+            const popupTemplate = `
+            <button class="close-btn">
+              <span></span>
+              <span></span>
+            </button>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="${data.weather[0].main}">
+            <h1>${data.name}</h1>
+            <ul>
+              <li><p>Temp: ${Math.floor(data.main.temp)};</p></li>
+              <li><p>Weather description: ${data.weather[0].description}</p></li>
+              <li><p>feels like: ${Math.floor(data.main.feels_like)};</p></li>
+              <li><p>Main: ${data.weather[0].main}</p></li>
+            </ul>
+            `;
+            popupContainer.innerHTML = popupTemplate;
+          });
+      };
+      const popupbtns = document.querySelectorAll('.popupbtn');
+      popupbtns.forEach((popupbtn) => {
+        popupbtn.addEventListener('click', (e) => {
+          popup.classList.toggle('show');
+          popupComments(e.target.getAttribute('id'));
+        });
+      });
     });
 };
-fetchApi();
-const navigation = document.querySelector('.navigation');
-const img = document.createElement('img');
-img.setAttribute('src', Icon);
-navigation.appendChild(img);
+populateUI();

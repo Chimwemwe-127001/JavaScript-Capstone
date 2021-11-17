@@ -55,7 +55,7 @@ ul > li:nth-child(1) a {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
@@ -102,4 +102,69 @@ footer p {
 
 .txt {
   align-items: center;
+}
+
+.close-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 44.5%;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 50%;
+  background: rgba(13, 211, 130, 255);
+}
+
+.close-btn > span {
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.close-btn > span:nth-child(1) {
+  transform: rotate(45deg);
+  bottom: 50%;
+}
+
+.close-btn > span:nth-child(2) {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.popup {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  padding: 30px;
+  width: 65%;
+  margin: 0 auto;
+  top: 10%;
+  right: 0;
+  left: 0;
+  border: 2px solid rgba(13, 211, 130, 255);
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup > ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.popup > ul > li {
+  list-style: none;
+  flex-basis: 35%;
+  flex-grow: 1;
 }
