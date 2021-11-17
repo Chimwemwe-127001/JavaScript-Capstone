@@ -59,13 +59,13 @@ const displayLikes = () => {
 const displayComments = (id) => {
   if (id) {
     const commentsSection = document.querySelector('.comments-list');
-    const commentcounter = document.querySelector('.comments-title')
+    const commentcounter = document.querySelector('.comments-title');
     if (commentsSection) {
       fetch(`${commentsApiURL}?item_id=${id}`)
         .then((res) => res.json())
         .then((result) => {
           if (result.error) {
-            commentcounter.innerHTML = `Comments(0)`
+            commentcounter.innerHTML = 'Comments(0)';
             if (result.error.status === 400) {
               commentsSection.innerHTML = 'No comments have been posted yet.';
             } else {
@@ -73,10 +73,9 @@ const displayComments = (id) => {
             }
           } else {
             result.forEach((commentData) => {
-              console.log(commentData)
               const { creation_date: date, username: user, comment: message } = commentData;
               commentsSection.innerHTML += `<li>${date} ${user}: ${message}</li>`;
-              commentcounter.innerHTML = `Comments(${result.length})`
+              commentcounter.innerHTML = `Comments(${result.length})`;
             });
           }
         }).catch(() => {
