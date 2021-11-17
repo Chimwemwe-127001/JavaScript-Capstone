@@ -7,7 +7,9 @@ const navigation = document.querySelector('.navigation');
 const img = document.createElement('img');
 img.setAttribute('src', Icon);
 navigation.appendChild(img);
+
 const likeApiURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/GRWzq7F1QiyQiW4Miwtn/likes/';
+const commentsApiURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/GRWzq7F1QiyQiW4Miwtn/comments/';
 const sendLikes = async (id) => {
   let response;
   if (id) {
@@ -33,6 +35,7 @@ const sendLikes = async (id) => {
   }
   return response;
 };
+
 const displayLike = async (id) => {
   await fetch(likeApiURL).then((res) => res.text())
     .then((info) => {
@@ -52,6 +55,33 @@ const displayLikes = () => {
     displayLike(id);
   });
 };
+
+const displayComments = (id) => {
+  if (id) {
+    const commentsSection = document.querySelector('.comments-list');
+    if (commentsSection) {
+      fetch(`${commentsApiURL}?item_id=${id}`)
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.error) {
+            if (result.error.status === 400) {
+              commentsSection.innerHTML = 'No comments have been posted yet.';
+            } else {
+              commentsSection.innerHTML = 'Comments cannot be displayed:';
+            }
+          } else {
+            result.forEach((commentData) => {
+              const { creation_date: date, username: user, comment: message } = commentData;
+              commentsSection.innerHTML += `<li>${date} ${user}: ${message}</li>`;
+            });
+          }
+        }).catch(() => {
+          commentsSection.innerHTML = 'Comments could not be fetched.';
+        });
+    }
+  }
+};
+
 const populateUI = async () => {
   await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,30&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())
@@ -104,8 +134,20 @@ const populateUI = async () => {
               <li><p>feels like: ${Math.floor(data.main.feels_like)};</p></li>
               <li><p>Main: ${data.weather[0].main}</p></li>
             </ul>
+            <div class="comments">
+              <h1>Comments()</h1>
+              <ul class="comments-list">
+              </ul>
+            </div>
+            <form class="comment-form" index=${data.id}>
+              <h1>Add a comment</h1>
+              <input id="name" type="text" placeholder="Your name">
+              <textarea id="comment" type="text" placeholder="Your insights" rows="6"></textarea>
+              <button type="submit">Comment</button>
+            </form>
             `;
             popupContainer.innerHTML = popupTemplate;
+            displayComments(data.id);
             const closebtn = document.querySelector('.close-btn');
             closebtn.addEventListener('click', () => {
               popup.classList.toggle('show');
