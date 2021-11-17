@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\nheader {\r\n  border: 1px solid black;\r\n  height: 90px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\nbutton {\r\n  border: none;\r\n  color: #fff;\r\n  background: rgba(13, 211, 130, 255);\r\n  border-radius: 15px;\r\n  padding: 0.5rem 0.7rem;\r\n}\r\n.d-flex {\r\n  display: flex;\r\n}\r\n.navigation {\r\n  margin: 0 auto;\r\n  width: 60%;\r\n  flex-direction: row-reverse;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n.navigation img {\r\n  height: 60px;\r\n}\r\nul > * {\r\n  list-style: none;\r\n  margin-left: 35px;\r\n}\r\nul > li > a {\r\n  margin: 1rem 0;\r\n  text-decoration: none;\r\n  color: black;\r\n}\r\nul > li:nth-child(1) a {\r\n  text-decoration: underline;\r\n  font-weight: 700;\r\n}\r\nfooter {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  height: 48px;\r\n  background: #fff;\r\n  border-top: 1px solid black;\r\n}\r\nfooter p {\r\n  text-align: center;\r\n}\r\n.main-container {\r\n  margin: 20px auto 60px auto;\r\n  flex-wrap: wrap;\r\n  width: 60%;\r\n  gap: 30px;\r\n}\r\n.temp {\r\n  color: #0194a2;\r\n  font-size: 60px;\r\n  font-weight: 500;\r\n  margin: 0;\r\n  padding-block: 60px 10px;\r\n}\r\n.card {\r\n  position: relative;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  flex-basis: 150px;\r\n  flex-grow: 1;\r\n  padding: 20px;\r\n  border-radius: 15px;\r\n  border: 1px solid rgba(13, 211, 130, 255);\r\n}\r\n.card .forecast {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n.txt {\r\n  align-items: center;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nheader {\r\n  border: 1px solid black;\r\n  height: 90px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nbutton {\r\n  border: none;\r\n  color: #fff;\r\n  background: rgba(13, 211, 130, 255);\r\n  border-radius: 15px;\r\n  padding: 0.5rem 0.7rem;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\n.navigation {\r\n  margin: 0 auto;\r\n  width: 60%;\r\n  flex-direction: row-reverse;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.navigation img {\r\n  height: 60px;\r\n}\r\n\r\nul > * {\r\n  list-style: none;\r\n  margin-left: 35px;\r\n}\r\n\r\nul > li > a {\r\n  margin: 1rem 0;\r\n  text-decoration: none;\r\n  color: black;\r\n}\r\n\r\nul > li:nth-child(1) a {\r\n  text-decoration: underline;\r\n  font-weight: 700;\r\n}\r\n\r\nfooter {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  height: 48px;\r\n  background: #fff;\r\n  border-top: 1px solid black;\r\n}\r\n\r\nfooter p {\r\n  text-align: center;\r\n}\r\n\r\n.main-container {\r\n  margin: 20px auto 60px auto;\r\n  flex-wrap: wrap;\r\n  width: 60%;\r\n  gap: 30px;\r\n}\r\n\r\n.temp {\r\n  color: #0194a2;\r\n  font-size: 60px;\r\n  font-weight: 500;\r\n  margin: 0;\r\n  padding-block: 60px 10px;\r\n}\r\n\r\n.card {\r\n  position: relative;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  flex-basis: 150px;\r\n  flex-grow: 1;\r\n  padding: 20px;\r\n  border-radius: 15px;\r\n  border: 1px solid rgba(13, 211, 130, 255);\r\n}\r\n\r\n.card .forecast {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.txt {\r\n  align-items: center;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -569,10 +569,62 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const fetchApi = async () => {
-  await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,30,14,39,10&units=metric&appid=623e557fbf15d070be5435e1d2494617')
+const popup = document.querySelector('.popup');
+const navigation = document.querySelector('.navigation');
+const img = document.createElement('img');
+img.setAttribute('src', _thunder_svg__WEBPACK_IMPORTED_MODULE_1__);
+navigation.appendChild(img);
+const likeApiURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/GRWzq7F1QiyQiW4Miwtn/likes/';
+const sendLikes = async (id) => {
+  let response;
+  if (id) {
+    response = await fetch(likeApiURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: id,
+      }),
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        if (result === 'Created') {
+          return { error: false, data: result };
+        }
+        return { error: true, data: result };
+      })
+      .catch((error) => ({ error: true, data: error }));
+  } else {
+    response = { error: true, data: 'missing id' };
+  }
+  return response;
+};
+const displayLike = async (id) => {
+  await fetch(likeApiURL).then((res) => res.text())
+    .then((info) => {
+      if (info && info.length > 1) {
+        let likes = JSON.parse(info);
+        likes = likes.filter((data) => data.item_id === id);
+        if (likes.length > 0) {
+          document.querySelector(`.like-count[data='${id}']`).innerText = `${likes[0].likes} likes`;
+        }
+      }
+    });
+};
+const displayLikes = () => {
+  const likeCounters = document.querySelectorAll('.like-count');
+  likeCounters.forEach((el) => {
+    const id = el.getAttribute('data');
+    displayLike(id);
+  });
+};
+const populateUI = async () => {
+  await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,30&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())
     .then((result) => {
+      const cityCount = document.querySelector('.city-counter')
+      cityCount.innerText = `${result.list.length}`
       result.list.forEach((city) => {
         const mainContainer = document.querySelector('.main-container');
         const cardTemp = `
@@ -581,20 +633,62 @@ const fetchApi = async () => {
           <img class="forecast" src="https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png" alt="${city.weather[0].main}">
             <div class="txt-content">
               <p>${city.name}</p>
-              <span class="txt d-flex"><img class="like" src="${_like_svg__WEBPACK_IMPORTED_MODULE_2__}"><p>5 likes</p></span>
+              <span class="txt d-flex"><img class="like" src="${_like_svg__WEBPACK_IMPORTED_MODULE_2__}" data="${city.id}"><p class="like-count" data=${city.id}>0 likes</p></span>
             </div>
-          <button type="button">Comments</button>
+          <button id="${city.id}" class="popupbtn" type="button">Comments</button>
           </div>
         `;
         mainContainer.innerHTML += cardTemp;
       });
+      displayLikes();
+      // like item
+      const likeIcons = document.querySelectorAll('.like');
+      likeIcons.forEach((el) => {
+        const id = el.getAttribute('data');
+        el.addEventListener('click', () => {
+          sendLikes(id).then((res) => {
+            if (res.error === false) {
+              displayLikes();
+            }
+          });
+        });
+      });
+      const popupComments = async (id) => {
+        await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=623e557fbf15d070be5435e1d2494617`)
+          .then((response) => response.json())
+          .then((data) => {
+            const popupContainer = document.querySelector('.popup');
+            const popupTemplate = `
+            <button class="close-btn">
+              <span></span>
+              <span></span>
+            </button>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="${data.weather[0].main}">
+            <h1>${data.name}</h1>
+            <ul>
+              <li><p>Temp: ${Math.floor(data.main.temp)};</p></li>
+              <li><p>Weather description: ${data.weather[0].description}</p></li>
+              <li><p>feels like: ${Math.floor(data.main.feels_like)};</p></li>
+              <li><p>Main: ${data.weather[0].main}</p></li>
+            </ul>
+            `;
+            popupContainer.innerHTML = popupTemplate;
+            const closebtn = document.querySelector('.close-btn');
+            closebtn.addEventListener('click', () => {
+              popup.classList.toggle('show');
+            });
+          });
+      };
+      const popupbtns = document.querySelectorAll('.popupbtn');
+      popupbtns.forEach((popupbtn) => {
+        popupbtn.addEventListener('click', (e) => {
+          popup.classList.toggle('show');
+          popupComments(e.target.getAttribute('id'));
+        });
+      });
     });
 };
-fetchApi();
-const navigation = document.querySelector('.navigation');
-const img = document.createElement('img');
-img.setAttribute('src', _thunder_svg__WEBPACK_IMPORTED_MODULE_1__);
-navigation.appendChild(img);
+populateUI();
 })();
 
 /******/ })()
