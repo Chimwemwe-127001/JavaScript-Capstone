@@ -351,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nheader {\r\n  border: 1px solid black;\r\n  height: 90px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\n.navigation {\r\n  margin: 0 auto;\r\n  width: 50%;\r\n  flex-direction: row-reverse;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.navigation img {\r\n  height: 60px;\r\n}\r\n\r\nul > * {\r\n  list-style: none;\r\n  margin-left: 35px;\r\n}\r\n\r\nul > li > a {\r\n  margin: 1rem 0;\r\n  text-decoration: none;\r\n  color: black;\r\n}\r\n\r\nul > li:nth-child(1) a {\r\n  text-decoration: underline;\r\n  font-weight: 700;\r\n}\r\n\r\nfooter {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  height: 48px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\nheader {\r\n  border: 1px solid black;\r\n  height: 90px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\nbutton {\r\n  border: none;\r\n  color: #fff;\r\n  background: rgba(13, 211, 130, 255);\r\n  border-radius: 15px;\r\n  padding: 0.5rem 0.7rem;\r\n}\r\n.d-flex {\r\n  display: flex;\r\n}\r\n.navigation {\r\n  margin: 0 auto;\r\n  width: 60%;\r\n  flex-direction: row-reverse;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n.navigation img {\r\n  height: 60px;\r\n}\r\nul > * {\r\n  list-style: none;\r\n  margin-left: 35px;\r\n}\r\nul > li > a {\r\n  margin: 1rem 0;\r\n  text-decoration: none;\r\n  color: black;\r\n}\r\nul > li:nth-child(1) a {\r\n  text-decoration: underline;\r\n  font-weight: 700;\r\n}\r\nfooter {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  height: 48px;\r\n  background: #fff;\r\n  border-top: 1px solid black;\r\n}\r\nfooter p {\r\n  text-align: center;\r\n}\r\n.main-container {\r\n  margin: 20px auto 60px auto;\r\n  flex-wrap: wrap;\r\n  width: 60%;\r\n  gap: 30px;\r\n}\r\n.temp {\r\n  color: #0194a2;\r\n  font-size: 60px;\r\n  font-weight: 500;\r\n  margin: 0;\r\n  padding-block: 60px 10px;\r\n}\r\n.card {\r\n  position: relative;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  flex-basis: 150px;\r\n  flex-grow: 1;\r\n  padding: 20px;\r\n  border-radius: 15px;\r\n  border: 1px solid rgba(13, 211, 130, 255);\r\n}\r\n.card .forecast {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n.txt {\r\n  align-items: center;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -479,6 +479,12 @@ module.exports = function (cssWithMappingToString) {
 
 module.exports = __webpack_require__.p + "1a27195ad504a77c275a.svg";
 
+/***/ }),
+/* 12 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "8d60aaea715a4d564778.svg";
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -559,16 +565,32 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _thunder_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _like_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 
-const fetchApi = () => {
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=Lusaka&appid=623e557fbf15d070be5435e1d2494617')
+const fetchApi = async () => {
+  await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,30,14,39,10&units=metric&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())
-    .then((result) => console.log(result));
+    .then((result) => {
+      result.list.forEach((city) => {
+        const mainContainer = document.querySelector('.main-container');
+        const cardTemp = `
+          <div class="card d-flex">
+          <p class="temp">${Math.floor(city.main.temp)}&#8451;</p>
+          <img class="forecast" src="https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png" alt="${city.weather[0].main}">
+            <div class="txt-content">
+              <p>${city.name}</p>
+              <span class="txt d-flex"><img class="like" src="${_like_svg__WEBPACK_IMPORTED_MODULE_2__}"><p>5 likes</p></span>
+            </div>
+          <button type="button">Comments</button>
+          </div>
+        `;
+        mainContainer.innerHTML += cardTemp;
+      });
+    });
 };
 fetchApi();
-
 const navigation = document.querySelector('.navigation');
 const img = document.createElement('img');
 img.setAttribute('src', _thunder_svg__WEBPACK_IMPORTED_MODULE_1__);
