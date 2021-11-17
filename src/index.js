@@ -36,6 +36,34 @@ const sendLikes = async (id) => {
   return response;
 };
 
+const sendComments = async (id, username, comment) => {
+  let response;
+  if (id) {
+    response = await fetch(commentsApiURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: id,
+        username,
+        comment,
+      }),
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        if (result === 'Created') {
+          return { error: false, data: result };
+        }
+        return { error: true, data: result };
+      })
+      .catch((error) => ({ error: true, data: error }));
+  } else {
+    response = { error: true, data: 'missing id' };
+  }
+  return response;
+};
+
 const displayLike = async (id) => {
   await fetch(likeApiURL).then((res) => res.text())
     .then((info) => {
@@ -70,6 +98,7 @@ const displayComments = (id) => {
               commentsSection.innerHTML = 'Comments cannot be displayed:';
             }
           } else {
+            commentsSection.innerHTML = '';
             result.forEach((commentData) => {
               const { creation_date: date, username: user, comment: message } = commentData;
               commentsSection.innerHTML += `<li>${date} ${user}: ${message}</li>`;
@@ -135,7 +164,7 @@ const populateUI = async () => {
               <li><p>Main: ${data.weather[0].main}</p></li>
             </ul>
             <div class="comments">
-              <h1>Comments()</h1>
+              <h1>Comment(s)</h1>
               <ul class="comments-list">
               </ul>
             </div>
@@ -151,6 +180,20 @@ const populateUI = async () => {
             const closebtn = document.querySelector('.close-btn');
             closebtn.addEventListener('click', () => {
               popup.classList.toggle('show');
+            });
+
+            const form = document.querySelector('.comment-form');
+            form.addEventListener('submit', (e) => {
+              const id = e.target.getAttribute('index');
+              const username = document.getElementById('name').value;
+              const comment = document.getElementById('comment').value;
+              e.preventDefault();
+              sendComments(id, username, comment).then((res) => {
+                if (res.error === false) {
+                  form.reset();
+                  displayComments(id);
+                }
+              });
             });
           });
       };
