@@ -1,6 +1,7 @@
 import './style.css';
 import Icon from './thunder.svg';
 import Icon2 from './like.svg';
+
 const popup = document.querySelector('.popup');
 const navigation = document.querySelector('.navigation');
 const img = document.createElement('img');
@@ -55,8 +56,8 @@ const populateUI = async () => {
   await fetch('https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,30&appid=623e557fbf15d070be5435e1d2494617')
     .then((response) => response.json())
     .then((result) => {
-      const cityCount = document.querySelector('.city-counter')
-      cityCount.innerText = `${result.list.length}`
+      const cityCount = document.querySelector('.city-counter');
+      cityCount.innerText = `${result.list.length}`;
       result.list.forEach((city) => {
         const mainContainer = document.querySelector('.main-container');
         const cardTemp = `
