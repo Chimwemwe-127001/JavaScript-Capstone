@@ -87,11 +87,13 @@ const displayLikes = () => {
 const displayComments = (id) => {
   if (id) {
     const commentsSection = document.querySelector('.comments-list');
+    const commentcounter = document.querySelector('.comments-title');
     if (commentsSection) {
       fetch(`${commentsApiURL}?item_id=${id}`)
         .then((res) => res.json())
         .then((result) => {
           if (result.error) {
+            commentcounter.innerHTML = 'Comments(0)';
             if (result.error.status === 400) {
               commentsSection.innerHTML = 'No comments have been posted yet.';
             } else {
@@ -102,6 +104,7 @@ const displayComments = (id) => {
             result.forEach((commentData) => {
               const { creation_date: date, username: user, comment: message } = commentData;
               commentsSection.innerHTML += `<li>${date} ${user}: ${message}</li>`;
+              commentcounter.innerHTML = `Comments(${result.length})`;
             });
           }
         }).catch(() => {
@@ -164,8 +167,8 @@ const populateUI = async () => {
               <li><p>Main: ${data.weather[0].main}</p></li>
             </ul>
             <div class="comments">
-              <h1>Comment(s)</h1>
-              <ul class="comments-list">
+              <h1 class="comments-title">Comments()</h1>
+              <ul class="comments-list" id="count">
               </ul>
             </div>
             <form class="comment-form" index=${data.id}>
