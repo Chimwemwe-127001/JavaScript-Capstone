@@ -48,6 +48,11 @@ const populateUI = async () => {
             </ul>
             `;
             popupContainer.innerHTML = popupTemplate;
+
+            const closebtn = document.querySelector('.close-btn');
+            closebtn.addEventListener('click', () => {
+              popup.classList.toggle('show');
+            });
           });
       };
       const popupbtns = document.querySelectorAll('.popupbtn');
