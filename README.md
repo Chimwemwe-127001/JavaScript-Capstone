@@ -3,8 +3,11 @@
 # Weather App
 
 > This JavaScript capstone project is about building our own web application based on an external API. We selected an API that provides data about weather, a topic that we liked and then built the webapp around it. The webapp has 2 user interfaces (depending on the size of our team).
-
 Additional description about the project and its features.
+
+
+## Project Presentation
+- To get an idea about the project, [here](https://drive.google.com/file/d/1_gHd_k7Ywoiim3KVjDeM2P-xT26na72f/view?usp=sharing) is a short video that gives a brief overview of the project.
 
 ## Live Demo
 > Click [here](https://eager-meitner-73b056.netlify.app/) to view the project live demo.
