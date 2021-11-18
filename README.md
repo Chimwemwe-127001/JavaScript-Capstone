@@ -7,7 +7,7 @@
 Additional description about the project and its features.
 
 ## Live Demo
-> Click [here](https://chimwemwe-127001.github.io/JavaScript-Capstone/) to view the project live demo.
+> Click [here](eager-meitner-73b056.netlify.app/) to view the project live demo.
 
 ## Built With
 
