@@ -1,6 +1,7 @@
 import './style.css';
 import Icon from './thunder.svg';
 import Icon2 from './like.svg';
+import sendComments from './sendCommments.js';
 
 const popup = document.querySelector('.popup');
 const navigation = document.querySelector('.navigation');
@@ -20,34 +21,6 @@ const sendLikes = async (id) => {
       },
       body: JSON.stringify({
         item_id: id,
-      }),
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        if (result === 'Created') {
-          return { error: false, data: result };
-        }
-        return { error: true, data: result };
-      })
-      .catch((error) => ({ error: true, data: error }));
-  } else {
-    response = { error: true, data: 'missing id' };
-  }
-  return response;
-};
-
-const sendComments = async (id, username, comment) => {
-  let response;
-  if (id) {
-    response = await fetch(commentsApiURL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        item_id: id,
-        username,
-        comment,
       }),
     })
       .then((response) => response.text())
